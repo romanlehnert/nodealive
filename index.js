@@ -1,6 +1,9 @@
 var app = require('express').createServer();
 var sites = require('./lib/sitescollection')();
 
+// Setup some sites:
+var palabea = sites.createSite({id: "palabea", callbackUrl: "http://google.com/timeout/:userId"});
+var apple   = sites.createSite({id: "apple", callbackUrl: "http://apple.com/timeoutuser/:userId"});
 
 
 app.get('/sites/:siteId/users/:userId/ping', function(req,res){
