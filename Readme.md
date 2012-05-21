@@ -20,7 +20,10 @@ To get the required packages, run
 
 To create a site, provide a name and a callbackUrl. The callbackurl should contain ":userId" wich will be replaced by the the users UUID when he didn't send his keepalive request. 
 
-    var palabea = sites.createSite({id: "palabea", callbackUrl: "http://your_applications_hostname/timeout/your_secret_api_token/:userId"});
+    var palabea = sites.createSite({
+          id:          "palabea", 
+          callbackUrl: "http://your_applications_hostname/timeout/your_secret_api_token/:userId"
+        });
 
 To start the server, run
 
