@@ -1,5 +1,6 @@
 var app = require('express').createServer();
 var sites = require('./lib/sitescollection')();
+var port = process.env.PORT || 3000;
 
 // Setup some sites:
 var palabea = sites.createSite({id: "palabea", callbackUrl: "http://google.com/timeout/:userId"});
@@ -19,4 +20,4 @@ app.get('/sites/:siteId/users/:userId/ping', function(req,res){
 
 
 
-app.listen(3000);
+app.listen(port);
