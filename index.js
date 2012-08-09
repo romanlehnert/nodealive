@@ -4,7 +4,7 @@ var sites = require('./lib/sitescollection')();
 var port = process.env.PORT || 3000;
 
 // Setup some sites:
-var palabea = sites.createSite({id: "palabea", callbackUrl: "http://google.com/timeout/:sessionId/:userId"});
+var palabea = sites.addSite({id: "palabea", callbackUrl: "http://google.com/timeout/:sessionId/:userId"});
 
 
 
@@ -21,9 +21,8 @@ app.get('/sites/:siteId/sessions/:sessionId/users/:userId/ping', function(req,re
 
   var site = sites.findOrCreateById(req.params.siteId);
   var session = site.findOrCreateSessionById(req.params.sessionId);
-  var user = session.findOrCreateUserById(req.params.userId);
+  var user = session.observePingForUserbyId(req.params.userId);
 
-  user.ping();
   res.send(user.toJson());
 
 });
