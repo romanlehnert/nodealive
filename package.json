@@ -1,7 +1,10 @@
 { "name": "NodeAlive",
   "version": "0.1.0",
   "dependencies": 
-    { "express": ">=2.5.0" },
+    { "express": ">=2.5.0",
+      "moment": ">=1.7.0"
+    
+    },
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
