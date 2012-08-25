@@ -6,11 +6,11 @@ var port = process.env.PORT || 5000;
 
 var apiKeys = {}
 
-apiKeys["production"] = process.env.api_key_production || "changeme"
-apiKeys["staging"]    = process.env.api_key_staging    || "changeme"
-apiKeys["testing"]    = process.env.api_key_testing    || "testing"
-apiKeys["test"]       = process.env.api_key_test       || "test"
-apiKeys["develop"]    = process.env.api_key_develop    || "develop"
+apiKeys["production"] = process.env.API_KEY_PRODUCTION || "changeme"
+apiKeys["staging"]    = process.env.API_KEY_STAGING    || "changeme"
+apiKeys["testing"]    = process.env.API_KEY_TESTING    || "testing"
+apiKeys["test"]       = process.env.API_KEY_TEST       || "test"
+apiKeys["develop"]    = process.env.API_KEY_DEVELOP    || "develop"
 
 sites.addSite({id: "palabea-develop", callbackUrl: "http://localhost:3000/api/durations/:sessionId", api_key: apiKeys.develop});
 sites.addSite({id: "palabea-test", callbackUrl: "http://localhost:3001/api/durations/:sessionId", api_key: apiKeys.test});
