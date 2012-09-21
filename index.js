@@ -16,7 +16,7 @@ sites.addSite({id: "palabea-develop", callbackUrl: "http://localhost:3000/api/du
 sites.addSite({id: "palabea-test", callbackUrl: "http://localhost:3001/api/durations/:sessionId", api_key: apiKeys.test});
 sites.addSite({id: "palabea-testing", callbackUrl: "http://aebalap:secret!@testing.palabea.com/api/durations/:sessionId", api_key: apiKeys.testing});
 sites.addSite({id: "palabea-staging", callbackUrl: "http://staging.palabea.com/api/durations/:sessionId", api_key: apiKeys.staging });
-sites.addSite({id: "palabea-production", callbackUrl: "http://palabea.com/api/durations/:sessionId", api_key: apiKeys.production});
+sites.addSite({id: "palabea-production", callbackUrl: "http://www.palabea.com/api/durations/:sessionId", api_key: apiKeys.production});
 
 app.get('/sites/:siteId/sessions/:sessionId/users/:userId/ping', function(req,res){
 
